@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Si Gempi</title>
+  <!-- Fonts & Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Chewy&family=Baloo+2&family=Fredoka+One&family=Permanent+Marker&family=Adigiana&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Preload untuk gambar utama yang penting -->
+  <link rel="preload" as="image" href="https://placehold.co/1280x720/ffffff/000000?text=Poster+Video+Gempi"
+    crossorigin="anonymous" />
+  <!-- Font Awesome untuk ikon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+  <!-- Custom CSS ku sendiri -->
+  <link href="style.css" rel="stylesheet" />
+  <link href="bab.css" rel="stylesheet" />
+  <link href="button.css" rel="stylesheet" />
+  <link href="card.css" rel="stylesheet" />
+  <link href="scroll.css" rel="stylesheet" />
+  <link href="galery.css" rel="stylesheet" />
+  <link href="footer.css" rel="stylesheet" />
+  <link href="program.css" rel="stylesheet" />
+  <link href="preloader.css" rel="stylesheet" />
+  <link href="hk.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <canvas id="particleCanvas"></canvas>
+    <img src="logo.png" alt="Logo" class="loading" />
+    <div class="loading-text">Loading</div>
+  </div>
+  <audio id="welcome-audio" src="romantic.mp3"></audio>
+
+  <!-- Section 1: Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img class="logo" src="logo.png" alt="Logo" />
+        <span class="fw-bold">SI GEMPI</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCartoon"
+        aria-controls="navbarCartoon" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarCartoon">
+        <ul class="navbar-nav">
+          <li class="nav-item mx-2"><a class="nav-link fw-bold" href="#beranda">Beranda</a></li>
+          <li class="nav-item mx-2"><a class="nav-link fw-bold" href="#tim">Tim</a></li>
+          <li class="nav-item mx-2"><a class="nav-link fw-bold" href="#program">Program</a></li>
+          <li class="nav-item mx-2"><a class="nav-link fw-bold" href="#galery">Galeri</a></li>
+          <li class="nav-item mx-2"><a class="nav-link fw-bold" href="#komik">Komik</a></li>
+          <li class="nav-item mx-2"><a class="nav-link fw-bold" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Section 2: Beranda -->
+
+  <section id="beranda" class="hero d-flex flex-wrap align-items-center justify-content-center">
+    <div class="left col-md-5 text-center mb-4">
+      <img src="background.png" alt="Si Gempi keluar dari buku" />
+    </div>
+    <div class="right col-md-6">
+      <h1 class="title">SI GEMPI:</h1>
+      <h2 class="subtitle">KOMIK EDUKASI HUKUM CAMBUK</h2>
+      <p class="location">(di SMA Negeri 1 Kuta Makmur Kabupaten Aceh Utara)</p>
+      <p class="explain">Si Gempi adalah program PKM-PM yang menghadirkan komik edukasi hukum cambuk berbasis AR 3D
+        untuk meningkatkan pemahaman hukum syariat secara menarik dan interaktif.</p>
+
+      <div class="mt-4">
+        <!-- Tombol Hubungi Kami -->
+        <button id="contact-btn" class="btn btn-custom btn-blue">
+          Hubungi Kami
+          <div class="star-1">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 784.11 815.53">
+              <path class="fil0"
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+              </path>
+            </svg>
+          </div>
+          <div class="star-2">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 784.11 815.53">
+              <path class="fil0"
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+              </path>
+            </svg>
+          </div>
+        </button>
+
+        <!-- Pop-up Form -->
+        <div id="popup-form" class="popup-overlay">
+          <div class="popup-content">
+            <span id="close-popup" class="close-btn">&times;</span>
+            <h2>Hubungi Kami</h2>
+            <form id="contact-form">
+              <input type="text" name="name" placeholder="Nama Anda" required>
+              <input type="email" name="email" placeholder="Email Anda" required>
+              <textarea name="message" placeholder="Pesan Anda..." required></textarea>
+              <button type="submit">Kirim</button>
+            </form>
+            <p id="success-message" class="success-msg"></p>
+          </div>
+        </div>
+
+
+        <button class="btn btn-custom btn-yellow">
+          Program Kami
+          <div class="star-3">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 784.11 815.53">
+              <path class="fil0"
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+              </path>
+            </svg>
+          </div>
+          <div class="star-4">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 784.11 815.53">
+              <path class="fil0"
+                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
+              </path>
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Break -->
+
+  <section class="scroll-strip">
+    <div class="scroll-content">
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">Gempi Interaktif</div>
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">AR 3D Edukasi</div>
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">Hukum Syariat</div>
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">Si Gempi Bergerak!</div>
+    </div>
+  </section>
+
+  <!-- Section 3: Tim -->
+
+  <section id="tim" class="main-section text-center py-5">
+    <h2 class="mb-5 fw-bold">Tim Kami</h2>
+
+    <!-- Desktop: Efek kipas -->
+    <div class="hand d-none d-md-grid">
+      <div class="card" style="--i: 1">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="fatma.jpg" alt="Foto C" class="imgg" />
+            <div class="name">Desy Fatmasari </div>
+            <div class="role">Leader</div>
+          </div>
+          <div class="card-back">
+            <div class="profile-top">
+              <img src="fatma 2.png" alt="Desi Periati" class="profile-pic" />
+              <div class="profile-info">
+                <h3>Desy Fatmasari</h3>
+                <span class="nim">NIM:220210006</span>
+              </div>
+            </div>
+
+            <div class="fun-fact"> “Tekun, gigih, sabar, ikhlas demi hidup lebih baik.”</div>
+
+            <div class="prestasi">Mahasiswa Berprestasi LLDIKTI XIII Aceh & UNIMAL 2025, Ketua Umum UKM KSM Creative
+              Minority.</div>
+
+            <div class="socials">
+              <a href="https://www.instagram.com/desyfpohan" target="_blank" class="text-decoration-none"
+                style="color: #e1306c">
+                <i class="bi bi-instagram" style="font-size: 1.5rem"></i>
+              </a>
+              <a href=" https://www.linkedin.com/in/desy-fatmasari-371040287/" target="_blank"
+                class="text-decoration-none" style="color: #0a66c2">
+                <i class="bi bi-linkedin" style="font-size: 1.5rem"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="card" style="--i: 1">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="desi.jpg" alt="Foto C" class="imgg" />
+            <div class="name">Desi Periati</div>
+            <div class="role">Secretary</div>
+          </div>
+          <div class="card-back">
+            <div class="profile-top">
+              <img src="desi 2.jpg" alt="Desi Periati" class="profile-pic" />
+              <div class="profile-info">
+                <h3>Desi Periati</h3>
+                <span class="nim">NIM: 220210078</span>
+              </div>
+            </div>
+
+            <div class="fun-fact">Proses baik melahirkan karakter dan sukses sejati.</div>
+
+            <div class="prestasi">Aktif di HMI (2022), UKM Creative Minority (2023), dan HMPS Administrasi Publik
+              (2024).</div>
+
+            <div class="socials">
+              <a href="https://www.instagram.com/desiperiati/" target="_blank" class="text-decoration-none"
+                style="color: #e1306c">
+                <i class="bi bi-instagram" style="font-size: 1.5rem"></i>
+              </a>
+              <a href="https://linkedin.com/in/username" target="_blank" class="text-decoration-none"
+                style="color: #0a66c2">
+                <i class="bi bi-linkedin" style="font-size: 1.5rem"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="card" style="--i: 2">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="naqi.jpg" alt="Foto C" class="imgg" />
+            <div class="name">Fathi Annaqi</div>
+            <div class="role">AR Engineering</div>
+          </div>
+          <div class="card-back">
+            <div class="profile-top">
+              <img src="naqi 2.jpg" alt="Citra" class="profile-pic" />
+              <div class="profile-info">
+                <h3>Fathi Annaqi</h3>
+                <span class="nim">NIM : 220150016</span>
+              </div>
+            </div>
+
+            <div class="fun-fact">"Gott Würfelt Nicht"</div>
+
+            <div class="prestasi">Penerima Beasiswa DBS Foundation. Kontributor elevAlte by Microsoft</div>
+
+            <div class="socials">
+              <a href="https://www.instagram.com/xkskhekd?igsh=dTRoNjQ1czF6cDBp" target="_blank"
+                class="text-decoration-none" style="color: #e1306c">
+                <i class="bi bi-instagram" style="font-size: 1.5rem"></i>
+              </a>
+              <a href="https://linkedin.com/in/username" target="_blank" class="text-decoration-none"
+                style="color: #0a66c2">
+                <i class="bi bi-linkedin" style="font-size: 1.5rem"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="--i: 3">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="nawang.jpg" alt="Foto C" class="imgg" />
+            <div class="name">Nawang Wulandari</div>
+            <div class="role">Media And Public Relations</div>
+          </div>
+          <div class="card-back">
+            <div class="profile-top">
+              <img src="nawang 2.jpg" alt="Citra" class="profile-pic" />
+              <div class="profile-info">
+                <h3>Nawang Wulandari</h3>
+                <span class="nim">NIM : 230180140</span>
+              </div>
+            </div>
+
+
+            <div class="fun-fact"> “Hidup bukan lomba, tapi perjalanan.”</div>
+
+            <div class="prestasi">Bagian dari HIMASI Unimal dan UKM Creative Minority.
+              Pernah meraih Juara 2 Tim Hackathon tingkat nasional di USK.</div>
+
+            <div class="socials">
+              <a href="https://www.instagram.com/nawang_wlndri08/" target="_blank" class="text-decoration-none"
+                style="color: #e1306c">
+                <i class="bi bi-instagram" style="font-size: 1.5rem"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/desi-periati-80134a311" target="_blank" class="text-decoration-none"
+                style="color: #0a66c2">
+                <i class="bi bi-linkedin" style="font-size: 1.5rem"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="--i: 3">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="zahra.jpg" alt="Foto C" class="imgg" />
+            <div class="name">Zahra Aziqah</div>
+            <div class="role">Writer Storyline</div>
+          </div>
+          <div class="card-back">
+            <div class="profile-top">
+              <img src="zahra.jpg" alt="Zahra Aziqah" class="profile-pic" />
+              <div class="profile-info">
+                <h3>Zahra Aziqah </h3>
+                <span class="nim">NIM: 240510309</span>
+              </div>
+            </div>
+
+            <div class="fun-fact"> “Proses baik membentuk karakter, karakter baik membawa kesuksesan.”</div>
+
+            <div class="prestasi">Lolos PKM Pendanaan</div>
+
+            <div class="socials">
+              <a href=" https://www.instagram.com/zarziq_22?igsh=MXYyNjRmaTh6MHdqeg==" target="_blank"
+                class="text-decoration-none" style="color: #e1306c">
+                <i class="bi bi-instagram" style="font-size: 1.5rem"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/zahra-aziqah-744a6721a/" target="_blank" class="text-decoration-none"
+                style="color: #0a66c2">
+                <i class="bi bi-linkedin" style="font-size: 1.5rem"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile: SwiperJS slider -->
+    <div class="swiper-container mobile-slider d-md-none">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="card-inner">
+            <!-- Front -->
+            <div class="card-front">
+              <img src="fatma.jpg" alt="Foto Fatma" class="imgg" />
+              <div class="name">Fatma</div>
+              <div class="role">Ketua Tim</div>
+            </div>
+
+            <!-- Back -->
+            <div class="card-back">
+              <div class="profile-top">
+                <img src="wow2.jpeg" alt="Citra" class="profile-pic" />
+                <div class="profile-info">
+                  <h3>Fathi Annaqi</h3>
+                  <span class="nim">NIM: 220150016</span>
+                </div>
+              </div>
+
+              <div class="fun-fact">"Gott Würfelt Nicht"</div>
+              <div class="prestasi">🚀 Tidur Seharian</div>
+
+              <div class="socials">
+                <!-- Instagram -->
+                <a href="https://instagram.com/username" target="_blank" class="text-decoration-none me-2"
+                  style="color: #e1306c">
+                  <i class="bi bi-instagram" style="font-size: 1.5rem"></i>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/username" target="_blank" class="text-decoration-none"
+                  style="color: #0a66c2">
+                  <i class="bi bi-linkedin" style="font-size: 1.5rem"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-inner">
+            <!-- Front -->
+            <div class="card-front">
+              <img src="fatma.jpg" alt="Foto Fatma" class="imgg" />
+              <div class="name">Fatma</div>
+              <div class="role">Ketua Tim</div>
+            </div>
+
+            <!-- Back -->
+            <div class="card-back">
+              <div class="profile-top">
+                <img src="wow2.jpeg" alt="Citra" class="profile-pic" />
+                <div class="profile-info">
+                  <h3>Fathi Annaqi</h3>
+                  <span class="nim">NIM: 220150016</span>
+                </div>
+              </div>
+
+              <div class="fun-fact">"Gott Würfelt Nicht"</div>
+              <div class="prestasi">🚀 Tidur Seharian</div>
+
+              <div class="socials">
+                <!-- Instagram -->
+                <a href="https://instagram.com/username" target="_blank" class="text-decoration-none me-2"
+                  style="color: #e1306c">
+                  <i class="bi bi-instagram" style="font-size: 1.5rem"></i>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/username" target="_blank" class="text-decoration-none"
+                  style="color: #0a66c2">
+                  <i class="bi bi-linkedin" style="font-size: 1.5rem"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-inner">
+            <!-- Front -->
+            <div class="card-front">
+              <img src="fatma.jpg" alt="Foto Fatma" class="imgg" />
+              <div class="name">Fatma</div>
+              <div class="role">Ketua Tim</div>
+            </div>
+
+            <!-- Back -->
+            <div class="card-back">
+              <div class="profile-top">
+                <img src="wow2.jpeg" alt="Citra" class="profile-pic" />
+                <div class="profile-info">
+                  <h3>Fathi Annaqi</h3>
+                  <span class="nim">NIM: 220150016</span>
+                </div>
+              </div>
+
+              <div class="fun-fact">"Gott Würfelt Nicht"</div>
+              <div class="prestasi">🚀 Tidur Seharian</div>
+
+              <div class="socials">
+                <!-- Instagram -->
+                <a href="https://instagram.com/username" target="_blank" class="text-decoration-none me-2"
+                  style="color: #e1306c">
+                  <i class="bi bi-instagram" style="font-size: 1.5rem"></i>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/username" target="_blank" class="text-decoration-none"
+                  style="color: #0a66c2">
+                  <i class="bi bi-linkedin" style="font-size: 1.5rem"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-inner">
+            <!-- Front -->
+            <div class="card-front">
+              <img src="fatma.jpg" alt="Foto Fatma" class="imgg" />
+              <div class="name">Fatma</div>
+              <div class="role">Ketua Tim</div>
+            </div>
+
+            <!-- Back -->
+            <div class="card-back">
+              <div class="profile-top">
+                <img src="wow2.jpeg" alt="Citra" class="profile-pic" />
+                <div class="profile-info">
+                  <h3>Fathi Annaqi</h3>
+                  <span class="nim">NIM: 220150016</span>
+                </div>
+              </div>
+
+              <div class="fun-fact">"Gott Würfelt Nicht"</div>
+              <div class="prestasi">🚀 Tidur Seharian</div>
+
+              <div class="socials">
+                <!-- Instagram -->
+                <a href="https://instagram.com/username" target="_blank" class="text-decoration-none me-2"
+                  style="color: #e1306c">
+                  <i class="bi bi-instagram" style="font-size: 1.5rem"></i>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/username" target="_blank" class="text-decoration-none"
+                  style="color: #0a66c2">
+                  <i class="bi bi-linkedin" style="font-size: 1.5rem"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-inner">
+            <!-- Front -->
+            <div class="card-front">
+              <img src="fatma.jpg" alt="Foto Fatma" class="imgg" />
+              <div class="name">Fatma</div>
+              <div class="role">Ketua Tim</div>
+            </div>
+
+            <!-- Back -->
+            <div class="card-back">
+              <div class="profile-top">
+                <img src="wow2.jpeg" alt="Citra" class="profile-pic" />
+                <div class="profile-info">
+                  <h3>Fathi Annaqi</h3>
+                  <span class="nim">NIM: 220150016</span>
+                </div>
+              </div>
+
+              <div class="fun-fact">"Gott Würfelt Nicht"</div>
+              <div class="prestasi">🚀 Tidur Seharian</div>
+
+              <div class="socials">
+                <!-- Instagram -->
+                <a href="https://instagram.com/username" target="_blank" class="text-decoration-none me-2"
+                  style="color: #e1306c">
+                  <i class="bi bi-instagram" style="font-size: 1.5rem"></i>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/username" target="_blank" class="text-decoration-none"
+                  style="color: #0a66c2">
+                  <i class="bi bi-linkedin" style="font-size: 1.5rem"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Break -->
+
+  <section class="scroll-strip">
+    <div class="scroll-content">
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">Gempi Interaktif</div>
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">AR 3D Edukasi</div>
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">Hukum Syariat</div>
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">Si Gempi Bergerak!</div>
+    </div>
+  </section>
+
+  <!-- Section 4: Program -->
+  <h1 class="section-title">Program Kami</h1>
+  <section class="program" id="program">
+    <!-- Kolom Kiri (Sticky Sidebar) -->
+    <div class="sidebar sticky-sidebar">
+      <!-- Video Autoplay Muted dengan Poster dan Lightbox -->
+      <div class="video-card" data-video-src="vid/vid gempi.mp4" style="margin-top: 1.5rem">
+        <video poster="img/thumb.jpg" playsinline muted autoplay loop>
+          <source src="vid gempi.mp4" type="video/mp4" />
+          <p>Browser Anda tidak mendukung tag video.</p>
+        </video>
+        <div class="play-overlay"><i class="fas fa-play"></i></div>
+      </div>
+
+
+      <!-- Ikon kecil di sidebar -->
+      <div class="small-image">
+        <img src="logo.png" alt="Ikon kecil" />
+      </div>
+    </div>
+
+    <!-- Kolom Kanan (Daftar Berita) -->
+    <div class="news-list">
+      <!-- Item Berita (akan muncul dengan animasi) -->
+      <div class="news-item">
+        <div class="news-image">
+          <img loading="lazy" src="program1.jpg" alt="Gambar Komik Edukasi" onerror="this.src='desi.jpg'" />
+        </div>
+        <div class="news-content">
+          <h3>Sosialisasi Program ke SMA Negeri 1 Kuta Makmur</h3>
+          <p>Peluncuran komik edukasi interaktif pertama di SMA Negeri 1 Kuta Makmur. Para siswa antusias mempelajari
+            hukum adat dengan cara yang menyenangkan.</p>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-image">
+          <img loading="lazy" src="program2.jpg" alt="Gambar Komik Edukasi" onerror="this.src='desi.jpg'" />
+        </div>
+        <div class="news-content">
+          <h3>Kerjasama Si Gempi dengan Perpustakaan Daerah Kota Lhokseumawe</h3>
+          <p>Menghadirkan program edukasi interaktif berbasis komik untuk meningkatkan minat baca dan literasi hukum di
+            kalangan siswa.</p>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-image">
+          <img loading="lazy" src="program3.jpg" alt="Gambar Komik Edukasi" onerror="this.src='desi.jpg'" />
+        </div>
+        <div class="news-content">
+          <h3>Kerjasama Si Gempi dengan Perpustakaan Daerah Kota Lhokseumawe</h3>
+          <p>Kerjasama Si Gempi dan Perpustakaan Daerah Lhokseumawe untuk meningkatkan literasi hukum lewat komik
+            edukatif AR.</p>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-image">
+          <img loading="lazy" src="program4.jpg" alt="Gambar Teknologi AR" onerror="this.src='desi.jpg'" />
+        </div>
+        <div class="news-content">
+          <h3>UKM Creative Minority menjadi Mitra Komik Si Gempi</h3>
+          <p>UKM Creative Minority menjadi mitra kreatif dalam pengembangan dan promosi Komik Si Gempi berbasis
+            teknologi AR, sekaligus mendukung kolaborasi mahasiswa dalam karya edukatif dan inovatif.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Video -->
+  <div class="lightbox-modal">
+    <span class="close-btn">&times;</span>
+    <div class="video-wrapper">
+      <div class="video-wrapper-inner">
+        <video controls></video>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Break -->
+
+  <section class="scroll-strip">
+    <div class="scroll-content">
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">Gempi Interaktif</div>
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">AR 3D Edukasi</div>
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">Hukum Syariat</div>
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">Si Gempi Bergerak!</div>
+    </div>
+  </section>
+
+  <!-- Section 5: Galeri -->
+  <section id="galery" class="section-container">
+    <div class="left-panel">
+      <h2>GALERI KEGIATAN<br />Si Gempi Komik Edukasi Hukum Cambuk</h2>
+      <p>
+        Galeri Kegiatan menampilkan berbagai dokumentasi aktivitas Si Gempi dalam menyebarkan edukasi hukum cambuk
+        melalui komik interaktif. Setiap momen terekam sebagai bagian dari upaya kreatif meningkatkan pemahaman syariat
+        secara
+        menarik dan menyenangkan.
+      </p>
+    </div>
+
+    <div class="swiper swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide afuka swiper-lazy" data-event="gallery_item_click">
+          <img src="program1.jpg" alt="Memulai buat komik" class="swiper-lazy" />
+          <span>Sosialisasi Program ke SMA Negeri 1 Kuta Makmur</span>
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide afuka grid-item" data-event="gallery_item_click">
+          <img src="program2.jpg" alt="Belajar buat komik" class="swiper-lazy" />
+          <span>Kerjasama Si Gempi dengan Perpustakaan Daerah Kota Lhokseumawe</span>
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide afuka grid-item" data-event="gallery_item_click">
+          <img src="program3.jpg" alt="Belajar Dasar AR" class="swiper-lazy" />
+          <span>Kerjasama Si Gempi dengan Perpustakaan Daerah Kota Lhokseumawe</span>
+        </div>
+        <!-- Slide 4 -->
+        <div class="swiper-slide afuka grid-item" data-event="gallery_item_click">
+          <img src="program4.jpg" alt="Belajar EDIT VIDEO" class="swiper-lazy" />
+          <span>UKM Creative Minority menjadi Mitra Komik Si Gempi</span>
+        </div>
+        <!-- Slide 5 -->
+        <div class="swiper-slide afuka grid-item" data-event="gallery_item_click">
+          <img src="kegiatan 1.jpg" alt="Belajar cara tidur" />
+          <span>Sosialisasi Ke Mitra SMA Negeri 1 Kuta Makmur</span>
+        </div>
+        <!-- Tambahkan slide tambahan untuk efek zigzag yang lebih baik -->
+        <div class="swiper-slide afuka grid-item" data-event="gallery_item_click">
+          <img src="tim gempi.jpg" alt="Belajar programming" />
+          <span>Dokumentasi Anggota Tim PKM Si Gempi</span>
+        </div>
+
+        <div class="swiper-slide afuka grid-item" data-event="gallery_item_click">
+          <img src="ZOOM WEB.jpg" alt="Belajar programming" />
+          <span>Diskusi Zoom Terkait Pengembangan Website</span>
+        </div>
+
+        <div class="swiper-slide afuka grid-item" data-event="gallery_item_click">
+          <img src="3d.jpg" alt="Belajar programming" />
+          <span>Lanjutan Pembuatan Aplikasi AR</span>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- Section Break -->
+
+  <section class="scroll-strip">
+    <div class="scroll-content">
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">Gempi Interaktif</div>
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">AR 3D Edukasi</div>
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">Hukum Syariat</div>
+      <div class="item"><img src="logo.png" alt="Logo" /></div>
+      <div class="item">Si Gempi Bergerak!</div>
+    </div>
+  </section>
+
+  <!-- Section 6: Komik -->
+  <section class="komik" id="komik">
+    <div class="header-container">
+      <div class="title-with-brush">
+        <h1 class="main-title">KOMIK SI GEMPI</h1>
+      </div>
+      <p class="description">Kumpulan cerita konyol dan petualangan absurd dari karakter-karakter unik Si Gempi. Selamat
+        datang di dunia di mana hal-hal tak masuk akal adalah hal yang biasa!</p>
+    </div>
+
+    <div class="juki-grid-container">
+      <div class="juki-card card-1">
+        <div class="juki-card-gradient"></div>
+        <img src="BAB 1.png" class="juki-card-image" alt="Kucing Terbang" />
+        <div class="juki-label"><span>KECIDUK WARGA</span></div>
+      </div>
+      <div class="juki-card card-2">
+        <div class="juki-card-gradient"></div>
+        <img src="BAB 2.png" class="juki-card-image" alt="Paus Topi" />
+        <div class="juki-label"><span>JUDOL? AUTO MINUS BRO</span></div>
+      </div>
+      <div class="juki-card card-3">
+        <div class="juki-card-gradient"></div>
+        <img src="BAB 3.png" class="juki-card-image" alt="Alien Pesta" />
+        <div class="juki-label"><span>CUAN PALSU, CAMBUK ASLI</span></div>
+      </div>
+      <div class="juki-card card-4">
+        <div class="juki-card-gradient"></div>
+        <img src="BAB 4.png" class="juki-card-image" alt="Nanas Balap" />
+        <div class="juki-label"><span>UANG ICUT SIAPA YANG AMBIL?</span></div>
+      </div>
+      <div class="juki-card card-5">
+        <div class="juki-card-gradient"></div>
+        <img src="BAB 5.png" class="juki-card-image" alt="Batu Ngobrol" />
+        <div class="juki-label"><span>AWAS ADA ALGOJO</span></div>
+      </div>
+      <div class="juki-card card-6">
+        <div class="juki-card-gradient"></div>
+        <img src="BAB 6.png" class="juki-card-image" alt="T-Rex Semut" />
+        <div class="juki-label"><span>LIBURAN SAMBIL BELAJAR</span></div>
+      </div>
+      <div class="juki-card card-6">
+        <div class="juki-card-gradient"></div>
+        <img src="BAB 7.png" class="juki-card-image" alt="T-Rex Semut" />
+        <div class="juki-label"><span>BERANI JAGA DIRI</span></div>
+      </div>
+    </div>
+    </div>
+
+  </section>
+
+  <!-- Section 7: Footer -->
+
+  <footer class="footer bg-orange-dark text-light py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Info dan Navigasi -->
+        <div class="col-md-5 mb-4">
+          <h5>Si Gempi</h5>
+          <!-- <div class="row">
+            <div class="col-6">
+              <ul class="list-unstyled">
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Benefits</a></li>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Team</a></li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <ul class="list-unstyled">
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Legal Terms</a></li>
+                <li><a href="#">About</a></li>
+              </ul>
+            </div>
+          </div> -->
+          <!-- CDN Font Awesome 6 -->
+          <!-- Tambahkan ini di bagian <head> kalau belum -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+          <div class="mt-3">
+            <a href="https://www.facebook.com/si.gempi" target="_blank" class="text-light me-3">
+              <i class="fab fa-facebook-f fa-lg"></i>
+            </a>
+            <a href="https://youtube.com/@pkmpm_sigempi?si=pGt9_BhWOcJpDOoV" target="_blank" class="text-light me-3">
+              <i class="fab fa-youtube fa-lg"></i>
+            </a>
+            <a href="https://www.tiktok.com/@pkmpm_sigempi?is_from_webapp=1&sender_device=pc" target="_blank"
+              class="text-light me-3">
+              <i class="fab fa-tiktok fa-lg"></i>
+            </a>
+            <a href="https://www.instagram.com/pkmpm_sigempi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank" class="text-light">
+              <i class="fab fa-instagram fa-lg"></i>
+            </a>
+          </div>
+
+
+          <!-- Form Kontak -->
+          <!-- <section class="contact" id="contact">
+            <div class="col-md-7">
+              <h5 class="text-md-start mb-3">Contact Us</h5>
+              <form>
+                <div class="mb-3">
+                  <input type="email" class="form-control bg-orange-form text-light border-0"
+                    placeholder="Enter email" />
+                </div>
+                <div class="mb-3">
+                  <textarea class="form-control bg-orange-form text-light border-0" rows="3"
+                    placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-light">Send</button>
+              </form>
+            </div>
+        </div>
+      </div>
+      </section>
+  </footer> -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script src="card.js"></script>
+  <script src="preloader.js"></script>
+  <script src="program.js"></script>
+  <script src="galery.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>
